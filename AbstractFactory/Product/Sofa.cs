@@ -2,32 +2,48 @@ namespace AbstractFactory.Product {
     public interface ISofa {
         string HasLegs();
         string SitOn();
+        string ToString();
     }
 
     class ArtDecoSofa : ISofa {
         public string HasLegs() {
-            return "Art Deco Sofa has four short legs.";
+            return string.Format("{0} has four short legs.", ToString());
         }
+
         public string SitOn() {
-            return "Sit on Art Deco Sofa.";
+            return string.Format("Sit on {0}.", ToString());
+        }
+
+        public override string ToString() {
+            return "Art Deco Sofa";
         }
     }
 
     class VictorianSofa : ISofa {
         public string HasLegs() {
-            return "Victorian Sofa has four long legs.";
+            return string.Format("{0} has four long legs.", ToString());
         }
+
         public string SitOn() {
-            return "Sit on Victorian Sofa.";
+            return string.Format("Sit on {0}.", ToString());
+        }
+
+        public override string ToString() {
+            return "Victorian Sofa";
         }
     }
 
     class ModernSofa : ISofa {
         public string HasLegs() {
-            return "Modern Sofa has no legs.";
+            return string.Format("{0} has no legs.", ToString());
         }
+
         public string SitOn() {
-            return "Sit on Modern Sofa.";
+            return string.Format("Sit on {0}.", ToString());
+        }
+
+        public override string ToString() {
+            return "Modern Sofa";
         }
     }
 }

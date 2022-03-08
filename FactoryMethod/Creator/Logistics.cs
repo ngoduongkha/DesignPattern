@@ -2,11 +2,11 @@
 
 namespace FactoryMethod.Creator {
     abstract class Logistics {
-        public abstract ITransport FactoryMethod();
-        public abstract string ToString();
+        public abstract ITransport CreateTransport();
+        public abstract override string ToString();
 
         public string PlanDelivery() {
-            var transport = FactoryMethod();
+            var transport = CreateTransport();
 
             if (transport == null)
                 return "No transportation was chosen!";

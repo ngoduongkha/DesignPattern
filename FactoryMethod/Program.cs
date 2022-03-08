@@ -3,14 +3,7 @@ using System;
 
 namespace FactoryMethod {
     class Client {
-
-    }
-    class Program {
-        static void ClientCode(Logistics logistics) {
-            Console.WriteLine("Client: I'm not aware of the creator's class, but it still works.\n" + logistics.PlanDelivery());
-        }
-
-        static void Main(string[] args) {
+        public void Main() {
             Logistics logistics;
             int choice;
 
@@ -41,6 +34,16 @@ namespace FactoryMethod {
 
             Console.WriteLine(string.Format("App: Launched with the {0}", logistics.ToString()));
             ClientCode(logistics);
+        }
+
+        void ClientCode(Logistics logistics) {
+            Console.WriteLine("Client: I'm not aware of the creator's class, but it still works.\n" + logistics.PlanDelivery());
+        }
+    }
+
+    class Program {
+        static void Main(string[] args) {
+            new Client().Main();
         }
     }
 }

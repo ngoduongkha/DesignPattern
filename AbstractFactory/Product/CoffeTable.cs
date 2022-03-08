@@ -4,6 +4,7 @@ namespace AbstractFactory.Product {
         string PutOn();
         string ToString();
     }
+
     class ArtDecoCoffeeTable : ICoffeeTable {
         public string HasLegs() {
             return string.Format("{0} has four short legs.", ToString());

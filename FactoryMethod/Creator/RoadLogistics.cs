@@ -3,13 +3,13 @@ using System;
 
 namespace FactoryMethod.Creator {
     class RoadLogistics : Logistics {
-        public override ITransport FactoryMethod() {
+        public override ITransport CreateTransport() {
             int choice;
 
             Console.WriteLine();
             Console.WriteLine("1. Truck \t 2. Car");
             Console.WriteLine("======== \t ======");
-            Console.WriteLine("What type of logistics do you want?");
+            Console.WriteLine("What type of transportation do you want?");
             Console.Write("Input your choice: ");
             choice = int.Parse(Console.ReadLine());
             Console.WriteLine();

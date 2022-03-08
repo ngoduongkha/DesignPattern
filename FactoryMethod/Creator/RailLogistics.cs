@@ -2,7 +2,7 @@
 
 namespace FactoryMethod.Creator {
     class RailLogistics : Logistics {
-        public override ITransport FactoryMethod() {
+        public override ITransport CreateTransport() {
             return new Train();
         }
 
