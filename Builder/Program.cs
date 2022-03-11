@@ -7,17 +7,17 @@ namespace Builder {
             var builder = new HouseBuilder();
             director.Builder = builder;
 
+            Console.WriteLine("Custom house:");
+            builder.BuildWindows().BuildGarage().BuildDoors();
+            Console.Write(builder.Build().ListParts());
+
             Console.WriteLine("Standard basic house:");
             director.BuildMinimalViableProduct();
-            Console.WriteLine(builder.GetHouse().ListParts());
+            Console.WriteLine(builder.Build().ListParts());
 
             Console.WriteLine("Standard full featured house:");
             director.BuildFullFeaturedProduct();
-            Console.WriteLine(builder.GetHouse().ListParts());
-
-            Console.WriteLine("Custom house:");
-            builder.BuildWalls();
-            Console.Write(builder.GetHouse().ListParts());
+            Console.WriteLine(builder.Build().ListParts());
         }
     }
 }

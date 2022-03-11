@@ -1,11 +1,11 @@
 ﻿namespace Builder {
     public interface IHouseBuilder {
-        void BuildWalls();
-        void BuildDoors();
-        void BuildWindows();
-        void BuildRoof();
-        void BuildGarage();
-        House GetHouse();
+        HouseBuilder BuildWalls();
+        HouseBuilder BuildDoors();
+        HouseBuilder BuildWindows();
+        HouseBuilder BuildRoof();
+        HouseBuilder BuildGarage();
+        House Build();
     }
 
     public class HouseBuilder : IHouseBuilder {
@@ -15,11 +15,11 @@
             Reset();
         }
 
-        public void Reset() {
+        private void Reset() {
             _house = new House();
         }
 
-        public House GetHouse() {
+        public House Build() {
             House result = _house;
 
             Reset();
@@ -27,24 +27,29 @@
             return result;
         }
 
-        public void BuildWalls() {
+        public HouseBuilder BuildWalls() {
             _house.Add("Walls");
+            return this;
         }
 
-        public void BuildDoors() {
+        public HouseBuilder BuildDoors() {
             _house.Add("Doors");
+            return this;
         }
 
-        public void BuildWindows() {
+        public HouseBuilder BuildWindows() {
             _house.Add("Windows");
+            return this;
         }
 
-        public void BuildRoof() {
+        public HouseBuilder BuildRoof() {
             _house.Add("Roof");
+            return this;
         }
 
-        public void BuildGarage() {
+        public HouseBuilder BuildGarage() {
             _house.Add("Garage");
+            return this;
         }
     }
 }
