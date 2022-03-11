@@ -20,13 +20,16 @@ namespace Builder {
             Console.WriteLine(builder.Build().ListParts());
 
             Console.WriteLine("Custom house...");
-            builder.BuildWindows();
+            builder.BuildWindows()
+                .BuildDoors()
+                .BuildWalls();
             Console.WriteLine(builder.Build().ListParts());
 
             builder = new ModernHouseBuilder();
             director.Builder = builder;
 
-            Console.WriteLine("\nMODERN HOUSE");
+            Console.WriteLine("================================");
+            Console.WriteLine("MODERN HOUSE");
             Console.WriteLine("Standard basic house...");
             director.BuildMinimalViableProduct();
             Console.WriteLine(builder.Build().ListParts());
@@ -36,7 +39,9 @@ namespace Builder {
             Console.WriteLine(builder.Build().ListParts());
 
             Console.WriteLine("Custom house...");
-            builder.BuildWindows();
+            builder.BuildWindows()
+                .BuildDoors()
+                .BuildWalls();
             Console.WriteLine(builder.Build().ListParts());
         }
     }
