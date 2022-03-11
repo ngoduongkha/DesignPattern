@@ -17,7 +17,6 @@
             _builder.BuildRoof();
             _builder.BuildDoors();
             _builder.BuildWindows();
-            _builder.BuildGarage();
         }
     }
 }

@@ -4,12 +4,8 @@ namespace Builder {
     class Program {
         static void Main(string[] args) {
             var director = new Director();
-            var builder = new HouseBuilder();
+            var builder = new WoodHouseBuilder();
             director.Builder = builder;
-
-            Console.WriteLine("Custom house:");
-            builder.BuildWindows().BuildGarage().BuildDoors();
-            Console.Write(builder.Build().ListParts());
 
             Console.WriteLine("Standard basic house:");
             director.BuildMinimalViableProduct();
@@ -17,6 +13,10 @@ namespace Builder {
 
             Console.WriteLine("Standard full featured house:");
             director.BuildFullFeaturedProduct();
+            Console.WriteLine(builder.Build().ListParts());
+
+            Console.WriteLine("Custom house:");
+            builder.BuildWindows();
             Console.WriteLine(builder.Build().ListParts());
         }
     }

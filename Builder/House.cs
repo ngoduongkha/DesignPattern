@@ -2,7 +2,7 @@
 
 namespace Builder {
     public class House {
-        private List<object> _part = new List<object>();
+        private readonly List<object> _part = new List<object>();
 
         public void Add(string part) {
             _part.Add(part);
