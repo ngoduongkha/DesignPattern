@@ -32,17 +32,18 @@ namespace FactoryMethod {
                     return;
             }
 
-            Console.WriteLine(string.Format("App: Launched with the {0}", logistics.ToString()));
+            Console.WriteLine($"App: Launched with the { logistics }");
             ClientCode(logistics);
         }
 
         void ClientCode(Logistics logistics) {
-            Console.WriteLine("Client: I'm not aware of the creator's class, but it still works.\n" + logistics.PlanDelivery());
+            Console.WriteLine("Client: I'm not aware of the creator's class, but it still works.\n");
+            Console.WriteLine(logistics.PlanDelivery());
         }
     }
 
     class Program {
-        static void Main(string[] args) {
+        static void Main() {
             new Client().Main();
         }
     }

@@ -4,11 +4,11 @@ using System;
 
 namespace Adapter {
     internal class Program {
-        static void Main(string[] args) {
-            IEnemyAttacker tank = new EnemyTank();
-            IEnemyAttacker aircraft = new EnemyAircraft();
+        static void Main() {
+            IAttacker tank = new Tank();
+            IAttacker aircraft = new Aircraft();
 
-            Console.WriteLine("The Enemy Aircraft");
+            Console.WriteLine("The  Aircraft");
 
             aircraft.AssignDriver("William");
             aircraft.DriveForward();
@@ -16,23 +16,23 @@ namespace Adapter {
             Console.WriteLine("-------------------------");
 
 
-            Console.WriteLine("The Enemy Tank");
+            Console.WriteLine("The  Tank");
 
             tank.AssignDriver("Frank");
             tank.DriveForward();
             tank.ShootBullet();
             Console.WriteLine("-------------------------");
 
-            EnemyRobot robot = new EnemyRobot();
-            Console.WriteLine("The Enemy Robot");
+            Robot robot = new Robot();
+            Console.WriteLine("The  Robot");
 
             robot.ReactToHuman("Paul");
             robot.WalkForward();
             robot.SlashWithSword();
             Console.WriteLine("-------------------------");
 
-            IEnemyAttacker robotAdapter = new EnemyRobotAdapter(robot);
-            Console.WriteLine("The Enemy Robot with Adapter");
+            IAttacker robotAdapter = new RobotAdapter(robot);
+            Console.WriteLine("The  Robot with Adapter");
 
             robotAdapter.AssignDriver("Paul");
             robotAdapter.DriveForward();

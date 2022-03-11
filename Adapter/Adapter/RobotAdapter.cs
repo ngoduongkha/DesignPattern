@@ -1,11 +1,11 @@
 ﻿using Adapter.Product;
 
 namespace Adapter.Adapter {
-    internal class EnemyRobotAdapter : IEnemyAttacker {
-        EnemyRobot robot;
+    internal class RobotAdapter : IAttacker {
+        private readonly Robot robot;
 
-        public EnemyRobotAdapter(EnemyRobot newRobot) {
-            this.robot = newRobot;
+        public RobotAdapter(Robot robot) {
+            this.robot = robot;
         }
 
         public void ShootBullet() {

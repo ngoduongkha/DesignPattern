@@ -1,7 +1,7 @@
 ﻿namespace FactoryMethod.Product {
     class Car : ITransport {
         public string Deliver() {
-            return string.Format("Deliver by {0}.", ToString());
+            return $"Deliver by { ToString() }.";
         }
 
         public override string ToString() {

@@ -2,7 +2,7 @@
 
 namespace Builder.Builder {
     public abstract class HouseBuilder {
-        protected House _house = new House();
+        protected House _house = new();
 
         public HouseBuilder() {
             Reset();
