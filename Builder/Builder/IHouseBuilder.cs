@@ -1,6 +1,6 @@
-﻿using Builder.Model;
+﻿using Builder.Product;
 
-namespace Builder.Product {
+namespace Builder.Builder {
     public abstract class HouseBuilder {
         protected House _house = new House();
 

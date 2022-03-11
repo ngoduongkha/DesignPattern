@@ -1,7 +1,7 @@
-﻿using Builder.Product;
+﻿using Builder.Builder;
 
-namespace Builder {
-    public class Director {
+namespace Builder.Director {
+    public class HouseDirector {
         private HouseBuilder _builder;
 
         public HouseBuilder Builder {

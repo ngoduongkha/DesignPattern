@@ -7,11 +7,11 @@ namespace AbstractFactory.Product {
 
     class ArtDecoCoffeeTable : ICoffeeTable {
         public string HasLegs() {
-            return string.Format("{0} has four short legs.", ToString());
+            return $"{ ToString() } has four short legs.";
         }
 
         public string PutOn() {
-            return string.Format("Put on {0}.", ToString());
+            return $"Put on { ToString() }.";
         }
 
         public override string ToString() {
@@ -21,11 +21,11 @@ namespace AbstractFactory.Product {
 
     class VictorianCoffeeTable : ICoffeeTable {
         public string HasLegs() {
-            return string.Format("{0} has four long legs.", ToString());
+            return $"{ ToString() } has four long legs.";
         }
 
         public string PutOn() {
-            return string.Format("Put on {0}.", ToString());
+            return $"Put on { ToString() }.";
         }
 
         public override string ToString() {
@@ -35,11 +35,11 @@ namespace AbstractFactory.Product {
 
     class ModernCoffeeTable : ICoffeeTable {
         public string HasLegs() {
-            return string.Format("{0} has no legs.", ToString());
+            return $"{ ToString() } has no legs.";
         }
 
         public string PutOn() {
-            return string.Format("Put on {0}.", ToString());
+            return $"Put on { ToString() }.";
         }
 
         public override string ToString() {

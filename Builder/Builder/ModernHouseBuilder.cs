@@ -1,6 +1,4 @@
-﻿using Builder.Model;
-
-namespace Builder.Product {
+﻿namespace Builder.Builder {
     public class ModernHouseBuilder : HouseBuilder {
         public override HouseBuilder BuildWalls() {
             _house.Add("Painted Walls");

@@ -7,11 +7,11 @@
 
     class ArtDecoChair : IChair {
         public string HasLegs() {
-            return string.Format("{0} has four short legs.", ToString());
+            return $"{ ToString() } has four short legs.";
         }
 
         public string SitOn() {
-            return string.Format("Sit on {0}.", ToString());
+            return $"Sit on { ToString() }.";
         }
 
         public override string ToString() {
@@ -21,11 +21,11 @@
 
     class VictorianChair : IChair {
         public string HasLegs() {
-            return string.Format("{0} has four long legs.", ToString());
+            return $"{ ToString() } has four long legs.";
         }
 
         public string SitOn() {
-            return string.Format("Sit on {0}.", ToString());
+            return $"Sit on { ToString() }.";
         }
 
         public override string ToString() {
@@ -34,11 +34,11 @@
     }
     class ModernChair : IChair {
         public string HasLegs() {
-            return string.Format("{0} has no legs.", ToString());
+            return $"{ ToString() } has no legs.";
         }
 
         public string SitOn() {
-            return string.Format("Sit on {0}.", ToString());
+            return $"Sit on { ToString() }.";
         }
 
         public override string ToString() {

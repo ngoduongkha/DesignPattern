@@ -1,23 +1,42 @@
-﻿using Adapter.Component;
+﻿using Adapter.Adapter;
+using Adapter.Product;
 using System;
 
 namespace Adapter {
     internal class Program {
         static void Main(string[] args) {
-            Console.Write("Input Round Hole radius: ");
-            RoundHole roundHole = new RoundHole(double.Parse(Console.ReadLine()));
+            IEnemyAttacker tank = new EnemyTank();
+            IEnemyAttacker aircraft = new EnemyAircraft();
 
-            Console.Write("Input Round Peg radius: ");
-            RoundPeg roundPeg = new RoundPeg(double.Parse(Console.ReadLine()));
+            Console.WriteLine("The Enemy Aircraft");
 
-            Console.Write("Input Square Peg width: ");
-            SquarePeg squarePeg = new SquarePeg(double.Parse(Console.ReadLine()));
+            aircraft.AssignDriver("William");
+            aircraft.DriveForward();
+            aircraft.ShootBullet();
+            Console.WriteLine("-------------------------");
 
-            PegAdapter pegAdapter = new PegAdapter(squarePeg);
 
-            Console.WriteLine();
-            Console.WriteLine(string.Format("Round Peg is {0} fit with the Round Hole", roundHole.Fits(roundPeg) ? "\b" : "not"));
-            Console.WriteLine(string.Format("Square Peg is {0} fit with the Round Hole", roundHole.Fits(pegAdapter) ? "\b" : "not"));
+            Console.WriteLine("The Enemy Tank");
+
+            tank.AssignDriver("Frank");
+            tank.DriveForward();
+            tank.ShootBullet();
+            Console.WriteLine("-------------------------");
+
+            EnemyRobot robot = new EnemyRobot();
+            Console.WriteLine("The Enemy Robot");
+
+            robot.ReactToHuman("Paul");
+            robot.WalkForward();
+            robot.SlashWithSword();
+            Console.WriteLine("-------------------------");
+
+            IEnemyAttacker robotAdapter = new EnemyRobotAdapter(robot);
+            Console.WriteLine("The Enemy Robot with Adapter");
+
+            robotAdapter.AssignDriver("Paul");
+            robotAdapter.DriveForward();
+            robotAdapter.ShootBullet();
         }
     }
 }
