@@ -1,4 +1,6 @@
-﻿namespace Builder {
+﻿using Builder.Interface;
+
+namespace Builder {
     public class Director {
         private IHouseBuilder _builder;
 
