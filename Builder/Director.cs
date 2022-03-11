@@ -1,24 +1,25 @@
-﻿using Builder.Interface;
+﻿using Builder.Product;
 
 namespace Builder {
     public class Director {
-        private IHouseBuilder _builder;
+        private HouseBuilder _builder;
 
-        public IHouseBuilder Builder {
+        public HouseBuilder Builder {
             set { _builder = value; }
         }
 
         public void BuildMinimalViableProduct() {
-            _builder.BuildWalls();
-            _builder.BuildRoof();
-            _builder.BuildDoors();
+            _builder.BuildWalls()
+                .BuildRoof()
+                .BuildDoors();
         }
 
         public void BuildFullFeaturedProduct() {
-            _builder.BuildWalls();
-            _builder.BuildRoof();
-            _builder.BuildDoors();
-            _builder.BuildWindows();
+            _builder.BuildWalls()
+                .BuildCeiling()
+                .BuildRoof()
+                .BuildDoors()
+                .BuildWindows();
         }
     }
 }

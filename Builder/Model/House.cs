@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Builder {
+namespace Builder.Model {
     public class House {
         private readonly List<object> _part = new List<object>();
 
