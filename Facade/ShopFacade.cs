@@ -2,7 +2,7 @@
 
 namespace Facade {
     internal class ShopFacade {
-        private static ShopFacade? _instance;
+        private static ShopFacade _instance = new();
 
         private readonly AccountService _accountService;
         private readonly PaymentService _paymentService;
@@ -26,21 +26,21 @@ namespace Facade {
 
         public void CashFreeShipping(string email) {
             _accountService.GetAccount(email);
-            _paymentService.PaymentByCash();
             _shippingService.FreeShipping();
+            _paymentService.PaymentByCash();
             _emailService.SendEmail(email);
 
-            Console.WriteLine("Order successfully!\n");
+            Console.WriteLine("Order successfully placed!\n");
         }
 
         public void MomoStandardShipping(string email, string mobilePhone) {
             _accountService.GetAccount(email);
-            _paymentService.PaymentByMomo();
             _shippingService.StandardShipping();
+            _paymentService.PaymentByMomo();
             _emailService.SendEmail(email);
             _smsService.SendSMS(mobilePhone);
 
-            Console.WriteLine("Order successfully!\n");
+            Console.WriteLine("Order successfully placed!\n");
         }
     }
 }
