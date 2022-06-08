@@ -1,31 +1,25 @@
-﻿using System;
+﻿using Prototype;
 
-namespace Prototype {
-    public class TimeUtils {
-        private static readonly DateTime Jan1st1970 = new DateTime
-        (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+ColorManager colormanager = new ColorManager();
 
-        public static long CurrentTimeMillis() {
-            return (long)(DateTime.UtcNow - Jan1st1970).TotalMilliseconds;
-        }
-    }
+// Initialize with standard colors
 
-    internal class Program {
-        static void Main(string[] args) {
-            long startTime = TimeUtils.CurrentTimeMillis();
-            Board chessBoard = new Board();
-            long endTime = TimeUtils.CurrentTimeMillis();
-            Console.WriteLine("Time taken to create a board: " + (endTime - startTime) + " millis");
+colormanager["red"] = new Color(255, 0, 0);
+colormanager["green"] = new Color(0, 255, 0);
+colormanager["blue"] = new Color(0, 0, 255);
 
-            startTime = TimeUtils.CurrentTimeMillis();
-            BoardCloneable boardClonable = new BoardCloneable();
-            endTime = TimeUtils.CurrentTimeMillis();
-            Console.WriteLine("Time taken to create a board: " + (endTime - startTime) + " millis");
+// User adds personalized colors
 
-            startTime = TimeUtils.CurrentTimeMillis();
-            BoardCloneable checkersBoard = (BoardCloneable)boardClonable.Clone();
-            endTime = TimeUtils.CurrentTimeMillis();
-            Console.WriteLine("Time taken to clone a board: " + (endTime - startTime) + " millis");
-        }
-    }
-}
+colormanager["angry"] = new Color(255, 54, 0);
+colormanager["peace"] = new Color(128, 211, 128);
+colormanager["flame"] = new Color(211, 34, 20);
+
+// User clones selected colors
+
+Color? color1 = colormanager["red"].Clone() as Color;
+Color? color2 = colormanager["peace"].Clone() as Color;
+Color? color3 = colormanager["flame"].Clone() as Color;
+
+// Wait for user
+
+Console.ReadKey();
